@@ -13,6 +13,9 @@ heroku create $app_name --manifest -t zensum --region eu --space zensum
 # Link git to heroku git
 heroku git:remote --app $app_name
 
+# Force heroku to use containers
+heroku stack:set container -a $app_name
+
 # Push to heroku git (heroku builds and does magic)
 git push heroku master
 
